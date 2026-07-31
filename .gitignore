@@ -6,6 +6,5 @@
 
 !start_example.sh
 !Insurgency/Config/Server/*
-!Insurgency/Saved/Config/*/Game.ini
 !Insurgency/Saved/Config/*/GameAll.ini
 !Insurgency/Saved/Config/*/Engine.ini
