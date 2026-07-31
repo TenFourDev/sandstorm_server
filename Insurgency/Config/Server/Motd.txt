@@ -4,19 +4,16 @@ Discord: https://discord.tenfour.id
 General:
 - FullyLoaded mutator (Gun Master class, no Commander / Fire Support)
 - Ping Mod (press T)
-
-Normal Mode: 
-- 8vs36 ImprovedAI (Difficulty: 0.8 Normal, 1.0 Hard)
 - 4 starting waves, +4 waves per objective
 - 15 seconds wave respawn time
 - 30 seconds objective stall counter (30 seconds to re-capture objective before losing)
+
+Normal Mode: 
+- 8vs36 ImprovedAI (Difficulty: 0.8 Normal, 1.0 Hard)
 - 2x Launcher Ammo (single use launcher unaffected)
 
 Zombie Mode:
 - 8vs96 Zombie
-- 4 starting waves, +4 waves per objective
-- 15 seconds wave respawn time
-- 30 seconds objective stall counter (30 seconds to re-capture objective before losing)
 - Faster Reload & Bolt
 - 2x Primary Ammo, 4x Secondary Ammo, 2x Launcher Ammo (single use launcher unaffected)
 
