@@ -6,6 +6,8 @@ if [ -f ./.env ]; then
     set +a
 fi
 
+cp ./Insurgency/Saved/Config/LinuxServer/GameAll.ini ./Insurgency/Saved/Config/LinuxServer/Game.ini
+
 Insurgency/Binaries/Linux/InsurgencyServer-Linux-Shipping \
     Tell?Scenario=Scenario_Tell_Survival?MaxPlayers=10 \
     -ModDownloadTravelTo="Precinct?Scenario=Scenario_Precinct_Checkpoint_Security?Mutators=Diff7?MaxPlayers=10" \
