@@ -4,7 +4,7 @@
 !.gitignore
 !README.md
 
-!start*example.sh
+!start*.sh
 !Insurgency/Config/Server/*
 !Insurgency/Saved/Config/*/GameAll.ini
 !Insurgency/Saved/Config/*/Engine.ini
