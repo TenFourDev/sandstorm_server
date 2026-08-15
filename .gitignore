@@ -7,5 +7,6 @@
 !start*.sh
 !Insurgency/Config/Server/*
 !Insurgency/Saved/Config/*/GameAll.ini
+!Insurgency/Saved/Config/*/GameCheckpoint.ini
 !Insurgency/Saved/Config/*/GameZombie.ini
 !Insurgency/Saved/Config/*/Engine.ini

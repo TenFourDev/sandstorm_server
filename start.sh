@@ -6,7 +6,7 @@ if [ -f ./.env ]; then
     set +a
 fi
 
-cp ./Insurgency/Saved/Config/LinuxServer/GameAll.ini ./Insurgency/Saved/Config/LinuxServer/Game.ini
+cp ./Insurgency/Saved/Config/LinuxServer/GameCheckpoint.ini ./Insurgency/Saved/Config/LinuxServer/Game.ini
 
 Insurgency/Binaries/Linux/InsurgencyServer-Linux-Shipping \
     Tell?Scenario=Scenario_Tell_Survival?MaxPlayers=10 \
