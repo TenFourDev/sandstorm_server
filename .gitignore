@@ -8,6 +8,5 @@
 !Insurgency/Config/Server/*
 !Insurgency/Saved/Config/*/GameCheckpoint.ini
 !Insurgency/Saved/Config/*/GameZombie.ini
-!Insurgency/Saved/Config/*/Engine.ini
 !Insurgency/Saved/Config/*/EngineZombie.ini
 !Insurgency/Saved/Config/*/EngineCheckpoint.ini
