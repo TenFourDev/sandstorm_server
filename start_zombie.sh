@@ -7,6 +7,7 @@ if [ -f ./.env ]; then
 fi
 
 cp ./Insurgency/Saved/Config/LinuxServer/GameZombie.ini ./Insurgency/Saved/Config/LinuxServer/Game.ini
+cp ./Insurgency/Saved/Config/LinuxServer/EngineZombie.ini ./Insurgency/Saved/Config/LinuxServer/Engine.ini
 
 Insurgency/Binaries/Linux/InsurgencyServer-Linux-Shipping \
     Tell?Scenario=Scenario_Tell_Survival?MaxPlayers=6 \
