@@ -2,9 +2,9 @@ Contact me on Discord (username): SuspiOwl
 Discord: https://discord.tenfour.id
 
 Zombie Mode:
-- 8vs96 Zombie
+- 6vs96 Zombie
 - Faster Reload & Bolt
-- 2x Primary Ammo, 4x Secondary Ammo, 2x Launcher Ammo (single use launcher unaffected)
+- 2x Primary Ammo, 4x Secondary Ammo, 3x Launcher Ammo (single use launcher unaffected)
 - FullyLoaded mutator (Gun Master class, no Commander / Fire Support)
 - Ping Mod (press T)
 - 4 starting waves, +3 waves per objective
