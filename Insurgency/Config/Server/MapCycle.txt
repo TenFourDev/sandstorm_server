@@ -114,6 +114,7 @@
 (Scenario="Scenario_Summit_CS_Checkpoint_Security_B",Lighting="Day",Options="?mutators=Diff9?Label=(HARD)")
 (Scenario="Scenario_Tell_CS_Checkpoint_Security_2014",Lighting="Day",Options="?mutators=Diff9?Label=(HARD)")
 (Scenario="Scenario_Tideway_CS_Checkpoint_Security_B",Lighting="Day",Options="?mutators=Diff9?Label=(HARD)")
+(Scenario="Scenario_Hold_Checkpoint_Security",Lighting="Day",Options="?mutators=Diff9?Label=(HARD)")
 (Scenario="Scenario_Hold_Checkpoint_Insurgents",Lighting="Day",Options="?mutators=Diff9?Label=(HARD)")
 (Scenario="Scenario_Border_Checkpoint_Security",Lighting="Day",Options="?mutators=Diff9?Label=(HARD)")
 (Scenario="Alpha_path1",Lighting="Day",Options="?mutators=Diff9?Label=(HARD)")
