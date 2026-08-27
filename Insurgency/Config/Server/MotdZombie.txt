@@ -2,13 +2,13 @@ Contact me on Discord (username): SuspiOwl
 Discord: https://discord.tenfour.id
 
 Zombie Mode:
-- 6vs96 Zombie
+- 4vs96 Zombie
 - Faster Reload & Bolt
-- 2x Primary Ammo, 4x Secondary Ammo, 3x Launcher Ammo (single use launcher unaffected)
+- 2.5x Primary Ammo, 3x Secondary Ammo, 3x Launcher Ammo (single use launcher unaffected)
 - FullyLoaded mutator (Gun Master class, no Commander / Fire Support)
 - Ping Mod (press T)
-- 4 starting waves, +3 waves per objective
+- 2 starting waves, +1 waves per objective (+ 1 wave every 150-250 kills)
 - 15 seconds wave respawn time
-- 30 seconds objective stall counter (30 seconds to re-capture objective before losing)
+- 60 seconds objective stall counter (60 seconds to re-capture objective before losing)
 
 Have Fun!
