@@ -6,7 +6,7 @@ General:
 - 2x Launcher Ammo (single use launcher unaffected)
 - FullyLoaded mutator (Gun Master class, no Commander / Fire Support)
 - Ping Mod (press T)
-- 4 starting waves, +4 waves per objective
+- 4 starting waves, +2 waves per objective, +1 wave every 25-60 enemies killed
 - 15 seconds wave respawn time
 - 30 seconds objective stall counter (30 seconds to re-capture objective before losing)
 
