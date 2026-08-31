@@ -5,9 +5,11 @@ services:
       dockerfile: Dockerfile
     container_name: sandstorm
     network_mode: host
-    user: "steam"
     security_opt:
       - seccomp:unconfined
+      - systempaths=unconfined    
+    cap_add:
+      - SYS_NICE
     restart: unless-stopped
     env_file:
       - .env
@@ -25,9 +27,11 @@ services:
       dockerfile: Dockerfile
     container_name: sandstorm-zombie
     network_mode: host
-    user: "steam"
     security_opt:
       - seccomp:unconfined
+      - systempaths=unconfined    
+    cap_add:
+      - SYS_NICE
     restart: unless-stopped
     env_file:
       - .env
