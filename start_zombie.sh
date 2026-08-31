@@ -10,8 +10,8 @@ cp ./Insurgency/Saved/Config/LinuxServer/GameZombie.ini ./Insurgency/Saved/Confi
 cp ./Insurgency/Saved/Config/LinuxServer/EngineZombie.ini ./Insurgency/Saved/Config/LinuxServer/Engine.ini
 
 Insurgency/Binaries/Linux/InsurgencyServer-Linux-Shipping \
-    Tell?Scenario=Scenario_Tell_Survival?MaxPlayers=5 \
-    -ModDownloadTravelTo="Precinct?Scenario=Scenario_Precinct_Checkpoint_Security?Lighting=Night?Mutators=Big,Healthy?MaxPlayers=5" \
+    Tell?Scenario=Scenario_Tell_Survival?MaxPlayers=5?Mutators=Big,Healthy \
+    -ModDownloadTravelTo="Precinct?Scenario=Scenario_Precinct_Checkpoint_Security?MaxPlayers=5?Mutators=Big,Healthy?Lighting=Night" \
     -MapCycle=MapCycleZombie.txt -SecurityCode=none -motd=MotdZombie -Mods -Port=27103 -QueryPort=27132 -NoEAC -GameStats \
     -mutators=Flashlight_Shadows,MapVoteLabels,MoreAmmoPlus,MoreAmmo,FullyLoaded,AdminCommands,JoinLeaveMessage,PingExt,StallCounter,ImprovedAI_2,Reloads,Bolts,Quickdraw,ZombiesLite,CapCount,Canoeing,AwardWaves \
     -GameStatsToken="${GAME_STATS_TOKEN}" -GSLTToken="${GSLT_TOKEN_ZOMBIE}" \
