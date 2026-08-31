@@ -1,0 +1,13 @@
+Contact me on Discord (username): SuspiOwl
+Discord: https://discord.tenfour.id
+
+General:
+- 8vs36 ImprovedAI (Difficulty: 0.8 Normal, 1.0 Hard)
+- 2x Launcher Ammo (single use launcher unaffected)
+- FullyLoaded mutator (Gun Master class, no Commander / Fire Support)
+- Ping Mod (press T)
+- 4 starting waves, +2 waves per objective, +1 wave every 25-60 enemies killed
+- 15 seconds wave respawn time
+- 60 seconds objective stall counter (60 seconds to re-capture objective before losing)
+
+Have Fun!

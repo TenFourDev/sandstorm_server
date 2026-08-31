@@ -1,0 +1,41 @@
+services:
+  sandstorm:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sandstorm
+    network_mode: host
+    user: "steam"
+    security_opt:
+      - seccomp:unconfined
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./server:/home/steam/server
+      - ./mod.io:/home/steam/mod.io
+      - ./config-inis/EngineCheckpoint.ini:/home/steam/server/Insurgency/Saved/Config/LinuxServer/EngineCheckpoint.ini
+      - ./config-inis/GameCheckpoint.ini:/home/steam/server/Insurgency/Saved/Config/LinuxServer/GameCheckpoint.ini
+      - ./config-txts:/home/steam/server/Insurgency/Config/Server
+      - ./start.sh:/home/steam/server/start.sh
+    stop_grace_period: 60s
+  sandstorm-zombie:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sandstorm-zombie
+    network_mode: host
+    user: "steam"
+    security_opt:
+      - seccomp:unconfined
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./server-zombie:/home/steam/server
+      - ./mod.io-zombie:/home/steam/mod.io
+      - ./config-inis/EngineZombie.ini:/home/steam/server/Insurgency/Saved/Config/LinuxServer/EngineZombie.ini
+      - ./config-inis/GameZombie.ini:/home/steam/server/Insurgency/Saved/Config/LinuxServer/GameZombie.ini
+      - ./config-txts:/home/steam/server/Insurgency/Config/Server
+      - ./start_zombie.sh:/home/steam/server/start.sh
+    stop_grace_period: 60s
