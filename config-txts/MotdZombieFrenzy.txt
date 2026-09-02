@@ -1,12 +1,13 @@
 Contact me on Discord (username): SuspiOwl
 Discord: https://discord.tenfour.id
 
-Zombie Mode:
-- 4vs40 Zombie
-- 1.5x Primary Ammo, 2x Secondary Ammo, 3x Launcher Ammo (single use launcher unaffected)
+Zombie Frenzy Mode:
+- 4vs96 Zombie
+- Faster Reload & Bolt
+- 2.5x Primary Ammo, 3x Secondary Ammo, 3x Launcher Ammo (single use launcher unaffected)
 - FullyLoaded mutator (Gun Master class, no Commander / Fire Support)
 - Ping Mod (press T)
-- 2 starting waves, +1 waves per objective (+ 1 wave every 50-150 kills)
+- 2 starting waves, +1 waves per objective (+ 1 wave every 100-250 kills)
 - 15 seconds wave respawn time
 - 60 seconds objective stall counter (60 seconds to re-capture objective before losing)
 

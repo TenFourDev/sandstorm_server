@@ -16,8 +16,8 @@ services:
     volumes:
       - ./server:/home/steam/server
       - ./mod.io:/home/steam/mod.io
-      - ./config-inis/EngineCheckpoint.ini:/home/steam/server/Insurgency/Saved/Config/LinuxServer/EngineCheckpoint.ini
-      - ./config-inis/GameCheckpoint.ini:/home/steam/server/Insurgency/Saved/Config/LinuxServer/GameCheckpoint.ini
+      - ./config-inis/EngineCheckpoint.ini:/home/steam/server/Insurgency/Saved/Config/LinuxServer/_Engine.ini
+      - ./config-inis/GameCheckpoint.ini:/home/steam/server/Insurgency/Saved/Config/LinuxServer/_Game.ini
       - ./config-txts:/home/steam/server/Insurgency/Config/Server
       - ./start.sh:/home/steam/server/start.sh
     stop_grace_period: 60s
@@ -37,11 +37,33 @@ services:
       - .env
     volumes:
       - ./server-zombie:/home/steam/server
-      - ./mod.io-zombie:/home/steam/mod.io
-      - ./config-inis/EngineZombie.ini:/home/steam/server/Insurgency/Saved/Config/LinuxServer/EngineZombie.ini
-      - ./config-inis/GameZombie.ini:/home/steam/server/Insurgency/Saved/Config/LinuxServer/GameZombie.ini
+      - ./mod.io:/home/steam/mod.io
+      - ./config-inis/EngineZombie.ini:/home/steam/server/Insurgency/Saved/Config/LinuxServer/_Engine.ini
+      - ./config-inis/GameZombie.ini:/home/steam/server/Insurgency/Saved/Config/LinuxServer/_Game.ini
       - ./config-txts:/home/steam/server/Insurgency/Config/Server
       - ./start_zombie.sh:/home/steam/server/start.sh
+    stop_grace_period: 60s
+  sandstorm-zombie-frenzy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sandstorm-zombie-frenzy
+    network_mode: host
+    security_opt:
+      - seccomp:unconfined
+      - systempaths=unconfined    
+    cap_add:
+      - SYS_NICE
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./server-zombie-frenzy:/home/steam/server
+      - ./mod.io:/home/steam/mod.io
+      - ./config-inis/EngineZombieFrenzy.ini:/home/steam/server/Insurgency/Saved/Config/LinuxServer/_Engine.ini
+      - ./config-inis/GameZombieFrenzy.ini:/home/steam/server/Insurgency/Saved/Config/LinuxServer/_Game.ini
+      - ./config-txts:/home/steam/server/Insurgency/Config/Server
+      - ./start_zombie_frenzy.sh:/home/steam/server/start.sh
     stop_grace_period: 60s
   sandstorm-restarter:
     image: docker:cli
@@ -49,7 +71,7 @@ services:
     restart: unless-stopped
     volumes: ["/var/run/docker.sock:/var/run/docker.sock"]
     environment:
-      RESTART_TIME: 21:00
+      RESTART_TIME: 20:30
     entrypoint: ["/bin/sh","-c"]
     command:
       - |
@@ -58,8 +80,9 @@ services:
           echo "Current time: $$(date +'%H:%M')"
           if [ "$$(date +'%H:%M')" = "$${RESTART_TIME}" ]; then
             echo "Restarting containers..."
-            docker restart sandstorm
+            docker restart sandstorm 
             docker restart sandstorm-zombie
+            docker restart sandstorm-zombie-frenzy
           fi
           sleep 60
         done
