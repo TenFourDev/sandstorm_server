@@ -43,3 +43,23 @@ services:
       - ./config-txts:/home/steam/server/Insurgency/Config/Server
       - ./start_zombie.sh:/home/steam/server/start.sh
     stop_grace_period: 60s
+  sandstorm-restarter:
+    image: docker:cli
+    container_name: sandstorm-restarter
+    restart: unless-stopped
+    volumes: ["/var/run/docker.sock:/var/run/docker.sock"]
+    environment:
+      RESTART_TIME: 21:00
+    entrypoint: ["/bin/sh","-c"]
+    command:
+      - |
+        echo "Server will restart at $${RESTART_TIME} UTC time every day."
+        while true; do
+          echo "Current time: $$(date +'%H:%M')"
+          if [ "$$(date +'%H:%M')" = "$${RESTART_TIME}" ]; then
+            echo "Restarting containers..."
+            docker restart sandstorm
+            docker restart sandstorm-zombie
+          fi
+          sleep 60
+        done
