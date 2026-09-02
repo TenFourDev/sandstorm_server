@@ -7,20 +7,22 @@ services:
     network_mode: host
     security_opt:
       - seccomp:unconfined
-      - systempaths=unconfined    
+      - systempaths=unconfined
     cap_add:
       - SYS_NICE
     restart: unless-stopped
     env_file:
       - .env
+    # environment:
+    #   - RUN_APP_UPDATE=true
     volumes:
       - ./server:/home/steam/server
+      - ./server-content:/home/steam/server/Insurgency/Content
       - ./mod.io:/home/steam/mod.io
       - ./config-inis/EngineCheckpoint.ini:/home/steam/server/Insurgency/Saved/Config/LinuxServer/_Engine.ini
       - ./config-inis/GameCheckpoint.ini:/home/steam/server/Insurgency/Saved/Config/LinuxServer/_Game.ini
       - ./config-txts:/home/steam/server/Insurgency/Config/Server
       - ./start.sh:/home/steam/server/start.sh
-    stop_grace_period: 60s
   sandstorm-zombie:
     build:
       context: .
@@ -37,12 +39,12 @@ services:
       - .env
     volumes:
       - ./server-zombie:/home/steam/server
+      - ./server-content:/home/steam/server/Insurgency/Content
       - ./mod.io:/home/steam/mod.io
       - ./config-inis/EngineZombie.ini:/home/steam/server/Insurgency/Saved/Config/LinuxServer/_Engine.ini
       - ./config-inis/GameZombie.ini:/home/steam/server/Insurgency/Saved/Config/LinuxServer/_Game.ini
       - ./config-txts:/home/steam/server/Insurgency/Config/Server
       - ./start_zombie.sh:/home/steam/server/start.sh
-    stop_grace_period: 60s
   sandstorm-zombie-frenzy:
     build:
       context: .
@@ -59,12 +61,12 @@ services:
       - .env
     volumes:
       - ./server-zombie-frenzy:/home/steam/server
+      - ./server-content:/home/steam/server/Insurgency/Content
       - ./mod.io:/home/steam/mod.io
       - ./config-inis/EngineZombieFrenzy.ini:/home/steam/server/Insurgency/Saved/Config/LinuxServer/_Engine.ini
       - ./config-inis/GameZombieFrenzy.ini:/home/steam/server/Insurgency/Saved/Config/LinuxServer/_Game.ini
       - ./config-txts:/home/steam/server/Insurgency/Config/Server
       - ./start_zombie_frenzy.sh:/home/steam/server/start.sh
-    stop_grace_period: 60s
   sandstorm-restarter:
     image: docker:cli
     container_name: sandstorm-restarter

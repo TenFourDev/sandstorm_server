@@ -3,25 +3,21 @@ set -e
 
 SERVER_DIR="/home/steam/server"
 
-echo "==> Checking for Insurgency: Sandstorm server updates..."
+if [ "${RUN_APP_UPDATE:-}" = "true" ]; then
+(
+    echo "==> Checking for Insurgency: Sandstorm server updates..."
 
-# print current user
-echo "==> Current user: $(whoami)"
+    gosu steam steamcmd \
+        +force_install_dir "$SERVER_DIR" \
+        +login anonymous \
+        +app_update 581330 \
+        +quit
 
-# print current working directory
-echo "==> Current working directory: $(pwd)"
+    echo "==> Insurgency: Sandstorm server is up to date."
+) &
+fi
 
-# print permissions of the server directory
-echo "==> Permissions of the server directory:"
-ls -ld "/home/steam/server"
 
-gosu steam steamcmd \
-    +force_install_dir "$SERVER_DIR" \
-    +login anonymous \
-    +app_update 581330 \
-    +quit
-
-echo "==> Insurgency: Sandstorm server is up to date."
 echo "==> Starting server..."
 
 cd "$SERVER_DIR"
