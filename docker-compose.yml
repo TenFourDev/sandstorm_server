@@ -13,7 +13,10 @@ services:
     restart: unless-stopped
     env_file:
       - .env
-    # environment:
+    # uncomment environment section to install / update the game server on container start
+    # when updating or installing the game server, run only one container to avoid conflicts
+    # e.g. docker compose up sandstorm
+    # environment: 
     #   - RUN_APP_UPDATE=true
     volumes:
       - ./server:/home/steam/server
