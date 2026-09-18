@@ -69,9 +69,14 @@ function extract(line, field, prefix, pos, rest, end_idx) {
     return substr(rest, 1, end_idx - 1)
 }
 
-function resolve(s, k, t) {
+function resolve(s, k, t, best) {
     for (k in exact_alias) if (s == k) return exact_alias[k]
-    for (k in map_alias) if (index(s, k) > 0) return map_alias[k]
+
+    best = ""
+    for (k in map_alias) {
+        if (index(s, k) > 0 && length(k) > length(best)) best = k
+    }
+    if (best != "") return map_alias[best]
 
     t = s
     sub(/^Scenario_/, "", t)
