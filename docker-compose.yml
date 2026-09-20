@@ -34,7 +34,7 @@ services:
     network_mode: host
     security_opt:
       - seccomp:unconfined
-      - systempaths=unconfined    
+      - systempaths=unconfined
     cap_add:
       - SYS_NICE
     restart: unless-stopped
@@ -56,7 +56,7 @@ services:
     network_mode: host
     security_opt:
       - seccomp:unconfined
-      - systempaths=unconfined    
+      - systempaths=unconfined
     cap_add:
       - SYS_NICE
     restart: unless-stopped
@@ -70,6 +70,26 @@ services:
       - ./config-inis/GameZombieFrenzy.ini:/home/steam/server/Insurgency/Saved/Config/LinuxServer/_Game.ini
       - ./config-txts:/home/steam/server/Insurgency/Config/Server
       - ./start_zombie_frenzy.sh:/home/steam/server/start.sh
+  sandstorm-vanilla:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sandstorm-vanilla
+    network_mode: host
+    security_opt:
+      - seccomp:unconfined
+      - systempaths=unconfined
+    cap_add:
+      - SYS_NICE
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./server-vanilla:/home/steam/server
+      - ./server-content:/home/steam/server/Insurgency/Content
+      - ./config-inis/GameVanilla.ini:/home/steam/server/Insurgency/Saved/Config/LinuxServer/_Game.ini
+      - ./config-txts:/home/steam/server/Insurgency/Config/Server
+      - ./start_vanilla.sh:/home/steam/server/start.sh
   sandstorm-restarter:
     image: docker:cli
     container_name: sandstorm-restarter
@@ -88,6 +108,7 @@ services:
             docker restart sandstorm 
             docker restart sandstorm-zombie
             docker restart sandstorm-zombie-frenzy
+            docker restart sandstorm-vanilla
           fi
           sleep 60
         done
