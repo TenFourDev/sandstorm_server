@@ -6,7 +6,7 @@
 (Scenario="Scenario_BattleDrill_Checkpoint_INS",Lighting="Day",Options="?mutators=Big")
 (Scenario="Scenario_BattleDrill_Checkpoint_SEC",Lighting="Day",Options="?mutators=Big")
 (Scenario="Scenario_BattleDrill_Checkpoint_Siege",Lighting="Day",Options="?mutators=Small")
-(Scenario="Scenario_Border_Checkpoint_Security",Lighting="Night",Options="?mutators=Mid")
+(Scenario="Scenario_Border_Checkpoint_Security",Lighting="Night",Options="?mutators=Big")
 (Scenario="Scenario_Citadel_Checkpoint_Insurgents",Lighting="Night",Options="?mutators=High")
 (Scenario="Scenario_Citadel_Checkpoint_Security",Lighting="Night",Options="?mutators=High")
 (Scenario="Scenario_Crossing_Checkpoint_Insurgents",Lighting="Night",Options="?mutators=Big")
