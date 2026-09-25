@@ -2,6 +2,7 @@ server
 server-zombie
 server-zombie-frenzy
 server-vanilla
+server-vanilla-easy
 server-content
 mod.io
 .env

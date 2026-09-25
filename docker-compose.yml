@@ -90,6 +90,26 @@ services:
       - ./config-inis/GameVanilla.ini:/home/steam/server/Insurgency/Saved/Config/LinuxServer/_Game.ini
       - ./config-txts:/home/steam/server/Insurgency/Config/Server
       - ./start_vanilla.sh:/home/steam/server/start.sh
+  sandstorm-vanilla-easy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sandstorm-vanilla-easy
+    network_mode: host
+    security_opt:
+      - seccomp:unconfined
+      - systempaths=unconfined
+    cap_add:
+      - SYS_NICE
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./server-vanilla-easy:/home/steam/server
+      - ./server-content:/home/steam/server/Insurgency/Content
+      - ./config-inis/GameVanillaEasy.ini:/home/steam/server/Insurgency/Saved/Config/LinuxServer/_Game.ini
+      - ./config-txts:/home/steam/server/Insurgency/Config/Server
+      - ./start_vanilla_easy.sh:/home/steam/server/start.sh
   sandstorm-restarter:
     image: docker:cli
     container_name: sandstorm-restarter
@@ -109,6 +129,7 @@ services:
             docker restart sandstorm-zombie
             docker restart sandstorm-zombie-frenzy
             docker restart sandstorm-vanilla
+            docker restart sandstorm-vanilla-easy
           fi
           sleep 60
         done
