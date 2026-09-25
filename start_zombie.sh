@@ -22,4 +22,4 @@ Insurgency/Binaries/Linux/InsurgencyServer-Linux-Shipping \
     -MapCycle=MapCycleZombie.txt -SecurityCode=none -motd=MotdZombie -Mods -Port=27103 -QueryPort=27132 -NoEAC -GameStats \
     -mutators=Flashlight_Shadows,MapVoteLabels,MoreAmmoPlus,MoreAmmo,FullyLoaded,AdminCommands,JoinLeaveMessage,PingExt,StallCounter,ImprovedAI_2,Reloads,Bolts,Quickdraw,ZombiesLite,CapCount,Canoeing,AwardWaves,Healthy,healthmodifier \
     -GameStatsToken="${GAME_STATS_TOKEN}" -GSLTToken="${GSLT_TOKEN_ZOMBIE}" \
-    -hostname="[Ten Four] Zombie 4vs56 (Gun Master, Waves)"
+    -hostname="[Ten Four] Zombie 4vs64 (Gun Master, Waves)"
