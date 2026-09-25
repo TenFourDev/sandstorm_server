@@ -10,7 +10,7 @@ cp ./Insurgency/Saved/Config/LinuxServer/_Game.ini ./Insurgency/Saved/Config/Lin
 
 TRAVEL_TO="$(awk -f ./Insurgency/Config/Server/random_map.awk -v maxplayers=8 -v mapfile=./Insurgency/Config/Server/ScenarioMap.txt ./Insurgency/Config/Server/MapCycleVanilla.txt 2>/dev/null)"
 if [ -z "$TRAVEL_TO" ]; then
-    TRAVEL_TO="Precinct?Scenario=Scenario_Precinct_Checkpoint_Security?Lighting=Night?MaxPlayers=5?Mutators=Mid"
+    TRAVEL_TO="Precinct?Scenario=Scenario_Precinct_Checkpoint_Security?Lighting=Day?MaxPlayers=8"
 fi
 
 echo "==> Random starting map: $TRAVEL_TO"
